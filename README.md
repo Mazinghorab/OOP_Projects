@@ -1,2 +1,31 @@
 # BankAccount
-Building a Simple Validated Bank Account
+The given Requirements : 
+
+1) Properties :
+    - AccountNumber (string, read-only after creation)
+    - Balance (decimal, read-only from outside)
+    - AccountHolder (string)
+
+2) Constructor:
+    - Takes accountNumber, accountHolder, initialBalance
+    - Validates:
+        - accountNumber not empty
+        - accountHolder not empty
+        - initialBalance >= 0
+
+3) Methods:
+    - Deposit(amount): Adds to balance
+        - Validates amount > 0
+    - Withdraw(amount): Subtracts from balance
+        - Validates amount > 0
+        - Validates sufficient funds
+    - GetBalance(): Returns current balance
+    - DisplayInfo(): Shows account details
+
+4) Static:
+    - TotalAccounts (static int) - counts total accounts created
+    - GetTotalAccounts() (static method) - returns count
+
+# Bonus :
+    - Add transaction history (List)
+    - Add GetTransactionHistory() method
