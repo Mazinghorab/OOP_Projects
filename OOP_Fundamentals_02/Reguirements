@@ -1,0 +1,45 @@
+# Employee Class
+
+
+1) Fields
+    - Name(string)
+    - ID(int)
+    - Salary(Decimal)
+    - Department(string)
+    - hireDate(DateTime)
+
+
+2) Properties
+    - Name(read-only)
+    - ID(read-only)
+    - Salary(read-only)
+    - Department(read-only)
+    - hireDate(read-only)
+   
+
+3) Constructors
+    - Takes Name, ID, Salary, Department
+    - Make a Clear Validation
+    - Setting hireDate to the CurrentDate
+
+
+4) Methods
+    - GiveSalaryRaise(percentage, managerPassword) "Increases salary"
+	- Validates manager password ("mgr123")
+	- Validates percentage (0-100)
+	- Updates salary
+    - ChangeDepartment(newDept, hrPassword) "Changes department"
+	- Validates HR password ("hr456")
+	- Validates department not empty
+	- Updates department
+    - DisplayInfo() "Shows employee details"
+  
+  
+5) Static
+    - TotalEmployees (static int) "counts total employees"
+    - GetTotalEmployees() "static method"
+
+
+# Bonus
+    - Add employment history "List"
+    - Add DisplayEmploymentHistory() "method"

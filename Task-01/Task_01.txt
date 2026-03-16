@@ -1,0 +1,27 @@
+**Enhance the Secure BankAccount Project from OOP_Fundamentals_01**
+
+Add a **Login/Authentication System** to the BankAccount class to ensure only the account owner can perform transactions.
+
+**What you need to implement:**
+
+1. **Login Mechanism**
+   - Track whether the user is currently logged in
+   - Require login before allowing deposits or withdrawals
+   - Implement logout functionality
+
+2. **Authentication**
+   - Verify the user's identity (using the PIN)
+   - Ensure only authenticated users can access sensitive operations
+
+3. **Security Rules**
+   - Deposits and withdrawals should ONLY work if the user is logged in
+   - Login should require correct PIN verification
+   - After 3 failed login attempts, lock the account temporarily
+
+**Think about:**
+- What private fields do you need?
+- What public methods should you add?
+- How will you validate the login state before each transaction?
+- How will you maintain security while keeping the code clean?
+
+**Hint:** Use the encapsulation principles we learned - private fields, public methods, validation!
