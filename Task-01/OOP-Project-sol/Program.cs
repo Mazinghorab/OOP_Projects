@@ -26,7 +26,7 @@ class BankAccount
         
         // 2) Authentication
         private int _pinOriginal;
-        public int PinUser = 0;
+        public int PinUser = 0; // can Change over the Program
         
         // 3) Security Rules
         private int _loginAttempts = 0;
@@ -57,19 +57,14 @@ class BankAccount
         
         public BankAccount(int accountNumber, decimal initialBalance, string accountHolder, int pin)
         {
-            if(string.IsNullOrEmpty(Convert.ToString(accountNumber)))
-                throw new Exception("Account Number Must not be Empty!");
             if(initialBalance <= 0)
                 throw new Exception("Balance Must not be Zero or Negative!");
-            if(AccountNumber < 0)
-                throw new Exception("Account Number Must be Positive!");
             AccountNumber = accountNumber;
-            PinUser = int.Parse(Console.ReadLine());
+            PinUser = pin;
             _pinOriginal = pin;
             Balance = initialBalance;
             this.AccountHolder = accountHolder;
             _transactionhistory = new List<Transaction>();
-            _isLogged = true;
             TotalAccounts++;
         }
         
@@ -107,6 +102,7 @@ class BankAccount
             {
                 _loginAttempts++;
                 Console.WriteLine($"Wrong PIN! Remaining Attempts : {3 - _loginAttempts}");
+                return;
             }
         }
 
