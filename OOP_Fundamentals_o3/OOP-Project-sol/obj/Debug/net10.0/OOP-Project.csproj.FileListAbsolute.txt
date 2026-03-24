@@ -1,0 +1,14 @@
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/bin/Debug/net10.0/OOP-Project
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/bin/Debug/net10.0/OOP-Project.deps.json
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/bin/Debug/net10.0/OOP-Project.runtimeconfig.json
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/bin/Debug/net10.0/OOP-Project.dll
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/bin/Debug/net10.0/OOP-Project.pdb
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/obj/Debug/net10.0/OOP-Project.GeneratedMSBuildEditorConfig.editorconfig
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/obj/Debug/net10.0/OOP-Project.AssemblyInfoInputs.cache
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/obj/Debug/net10.0/OOP-Project.AssemblyInfo.cs
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/obj/Debug/net10.0/OOP-Project.csproj.CoreCompileInputs.cache
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/obj/Debug/net10.0/OOP-Project.dll
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/obj/Debug/net10.0/refint/OOP-Project.dll
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/obj/Debug/net10.0/OOP-Project.pdb
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/obj/Debug/net10.0/OOP-Project.genruntimeconfig.cache
+/home/mazin/Documents/devs/c# projects/OOP-Project-sol/obj/Debug/net10.0/ref/OOP-Project.dll

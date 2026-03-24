@@ -1,0 +1,52 @@
+Vehicle Management System
+
+1. Vehicle Base Class :
+	- Protected fields: brand, model, year, price
+	- Public properties with validation
+	- Constructor
+	- Virtual methods: DisplayInfo(), CalculateDepreciation()
+
+2. Car Class (inherits Vehicle) :
+	- Add : numberOfDoors (int)
+	- Override : DisplayInfo() and CalculateDepreciation()
+	- Depreciation : 10% per year
+
+3. Truck Class (inherits Vehicle) :
+	- Add : cargoCapacity (decimal in tons)
+	- Override : DisplayInfo() and CalculateDepreciation()
+	- Depreciation : 15% per year
+
+4. Motorcycle Class (inherits Vehicle) :
+	- Add : engineSize (int in cc)
+	- Override : DisplayInfo() and CalculateDepreciation()
+	- Depreciation : 12% per year
+
+5. Test with Polymorphism :
+	- Create array of Vehicle containing all three types
+	- Display all vehicles
+	- Calculate total value after depreciation
+
+# Bonus
+	- Override ToString() for all classes
+	- Use 'is' keyword to check vehicle type
+	- Use GetType() to display actual type
+
+# Expected Output
+
+"""
+
+Vehicle: Toyota Camry (2020), Price: $25000
+Type: Car, Doors: 4
+Depreciated Value: $22500
+
+Vehicle: Ford F-150 (2019), Price: $35000
+Type: Truck, Cargo: 2.5 tons
+Depreciated Value: $29750
+
+Vehicle: Harley Davidson (2021), Price: $18000
+Type: Motorcycle, Engine: 1200cc
+Depreciated Value: $15840
+
+=== TOTAL VALUE: $68090 ===
+
+"""
