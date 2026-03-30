@@ -1,0 +1,40 @@
+Build a complete Payment Processing System that demonstrates:
+
+	- Interface design
+	- Multiple implementations
+	- Loose coupling
+	- Dependency injection
+	- Polymorphism in action
+
+1.IPaymentProcessor Interface:
+
+	interface IPaymentProcessor
+	{
+    		void ProcessPayment(decimal amount);
+    		bool ValidatePayment(decimal amount);
+    		string GetPaymentMethod();
+    		void PrintReceipt(decimal amount);
+	}
+
+2. Three Implementations:
+	- CreditCardProcessor - Validates up to $50,000
+	- PayPalProcessor - Validates up to $10,000
+
+3. PaymentManager Class:
+
+	- Uses IPaymentProcessor (dependency injection)
+	- Validates before processing
+	- Prints receipts
+	
+
+# BONUS
+### Options :
+	- CryptocurrencyProcessor (Bitcoin, Ethereum)
+	- ApplePayProcessor
+	- GooglePayProcessor
+	
+### Requirements:
+	- Implement IPaymentProcessor
+	- Add unique validation rules
+	- Custom receipt format
+	- Creative implementation
