@@ -1,0 +1,14 @@
+/home/mazin/RiderProjects/Final_Project/Final/bin/Debug/net10.0/Final
+/home/mazin/RiderProjects/Final_Project/Final/bin/Debug/net10.0/Final.deps.json
+/home/mazin/RiderProjects/Final_Project/Final/bin/Debug/net10.0/Final.runtimeconfig.json
+/home/mazin/RiderProjects/Final_Project/Final/bin/Debug/net10.0/Final.dll
+/home/mazin/RiderProjects/Final_Project/Final/bin/Debug/net10.0/Final.pdb
+/home/mazin/RiderProjects/Final_Project/Final/obj/Debug/net10.0/Final.GeneratedMSBuildEditorConfig.editorconfig
+/home/mazin/RiderProjects/Final_Project/Final/obj/Debug/net10.0/Final.AssemblyInfoInputs.cache
+/home/mazin/RiderProjects/Final_Project/Final/obj/Debug/net10.0/Final.AssemblyInfo.cs
+/home/mazin/RiderProjects/Final_Project/Final/obj/Debug/net10.0/Final.csproj.CoreCompileInputs.cache
+/home/mazin/RiderProjects/Final_Project/Final/obj/Debug/net10.0/Final.dll
+/home/mazin/RiderProjects/Final_Project/Final/obj/Debug/net10.0/refint/Final.dll
+/home/mazin/RiderProjects/Final_Project/Final/obj/Debug/net10.0/Final.pdb
+/home/mazin/RiderProjects/Final_Project/Final/obj/Debug/net10.0/Final.genruntimeconfig.cache
+/home/mazin/RiderProjects/Final_Project/Final/obj/Debug/net10.0/ref/Final.dll

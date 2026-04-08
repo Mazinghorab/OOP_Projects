@@ -1,0 +1,30 @@
+# E-commerce Shopping Cart
+
+- Product
+    - Attributes : ProductId, Name, Price, Description, StockQuantity
+    - Methods : getDetails(), updateStock(), applyDiscount()
+
+- Cart Item :
+    - Attributes : Product (Product Object), quantity
+    - Methods : decreaseQuantity(), TotalQuantity()
+
+- Shopping Cart :
+    - Attributes : Items, cartId
+    - Methods : addItem(products, quantity), removeItem(productId), calculateTotalItems(), clearCart()
+
+- Customer :
+    - Attributes : customerId, Name, Email, ShippingAddress, Cart (Shopping Cart object)
+    - Methods : checkout(), viewOrderHistory()
+    
+- Order :
+    - Attributes : OrderId, date, status(Available or not), finalTotal, PurchaseItemsNumber
+    - Methods : printRecipt(), updateStatus()
+    
+ 
+
+# Diagrams
+
+- Use Case
+- Class
+- Activity
+- Sequence
