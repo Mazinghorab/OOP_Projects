@@ -3,69 +3,35 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Taking some instances from our BluePrint
-        BankAccount Acc1 = new BankAccount("01", 3000, "11");
-        BankAccount Acc2 = new BankAccount("02", 6000, "12");
-        BankAccount Acc3 = new BankAccount("03", 1000, "13");
-        Acc1.DisplayInfo();
-        Acc2.DisplayInfo();
-        Acc3.DisplayInfo();
-        Console.Write($"Totla BankAccounts : {BankAccount.GetTotalAccounts()} \n");
-        
-        // Making some Actions
-        Acc1.Deposit(1000);
-        Console.WriteLine($"The Balance of The Account after Deposit is {Acc1.GetBalance()}");
-        Acc2.Deposit(500);
-        Console.WriteLine($"The Balance of The Account after Deposit is {Acc2.GetBalance()}");
-        Acc3.Deposit(90);
-        Console.WriteLine($"The Balance of The Account after Deposit is {Acc3.GetBalance()}");
-        Console.WriteLine();
-        
-        Acc1.Withdraw(900);
-        Acc1.Withdraw(1000);
-        Console.WriteLine($"Log : ");
-        var history1 = Acc1.TransactionHistory();
-        foreach (var it in history1)
-        {
-            Console.WriteLine($"{it} ");
-        }
-        Console.WriteLine($"The Total Balance of The Account is {Acc1.GetBalance()}");
-        Console.WriteLine();
+        Test();
+    }
 
-        Acc2.Withdraw(200);
-        Acc2.Withdraw(300);
-        Console.WriteLine($"Log : ");
-        var history2 = Acc2.TransactionHistory();
-        foreach (var it in history2)
-        {
-            Console.WriteLine($"{it} ");
-        }
-        Console.WriteLine($"The Total Balance of The Account is {Acc2.GetBalance()}");
-        Console.WriteLine();
-        
-        Acc3.Withdraw(60);
-        Console.WriteLine($"Log : ");
-        var history3 = Acc3.TransactionHistory();
-        foreach (var it in history3)
-        {
-            Console.WriteLine($"{it} ");
-        }
-        Console.WriteLine($"The Total Balance of The Account is {Acc3.GetBalance()}");
+    public static void Test()
+    {
+        BankAccount acc1 = new BankAccount(11, 500, "123", 11);
+        acc1.Login();
     }
 }
 
-// Creating the BankAccount Class
 class BankAccount
-    {
-        // Creating the main Fields(Private)
-        private string _accountnumber;
+{
+        private int _accountnumber;
         private decimal _balance;
         public string AccountHolder;
         public static int TotalAccounts;
         private readonly List<Transaction> _transactionhistory;
         
-        // Making some Properties for Fields Manipulation
-        public string AccountNumber
+        // 1) Login Field and it's Properity 
+        private bool _isLogged = false;
+        
+        // 2) Authentication
+        private int _pinOriginal;
+        public int PinUser = 0; // can Change over the Program
+        
+        // 3) Security Rules
+        private int _loginAttempts = 0;
+        
+        public int AccountNumber
         {
             get
             {
@@ -89,26 +55,72 @@ class BankAccount
             }
         }
         
-        // Parameterized Constructor with Validation 
-        public BankAccount(string accountNumber, decimal initialBalance, string accountHolder)
+        public BankAccount(int accountNumber, decimal initialBalance, string accountHolder, int pin)
         {
-            if(string.IsNullOrEmpty(accountNumber))
-                throw new Exception("Account Number Must not be Empty!");
-            if(string.IsNullOrEmpty(accountHolder))
-                throw new Exception("Account Holder Must not be Empty!");
             if(initialBalance <= 0)
                 throw new Exception("Balance Must not be Zero or Negative!");
-            
             AccountNumber = accountNumber;
+            PinUser = pin;
+            _pinOriginal = pin;
             Balance = initialBalance;
             this.AccountHolder = accountHolder;
-            TotalAccounts++;
             _transactionhistory = new List<Transaction>();
+            TotalAccounts++;
         }
         
-        // Methods of Our Class
+        private void CheckActivity()
+        {
+            if (!_isLogged)
+            {
+                Console.WriteLine("Account is not Logged in!");
+                return;
+            }
+            Console.WriteLine("Account is Logged in !");
+        }
+        
+        public void Logout()
+        {
+            Console.WriteLine("Bye Bye..");
+            _isLogged = false;
+        }
+
+        public void Login()
+        {
+            if (_loginAttempts >= 3)
+            {
+                Console.WriteLine("Come Back after 60 Seconds!!");
+                Thread.Sleep(60000);
+                _loginAttempts = 0;
+            }
+            if (CheckPIN())
+            {
+                Console.WriteLine("Welcome Back...!");
+                _isLogged = true;
+                _loginAttempts = 0;
+            }
+            else
+            {
+                _loginAttempts++;
+                Console.WriteLine($"Wrong PIN! Remaining Attempts : {3 - _loginAttempts}");
+                return;
+            }
+        }
+
+        private bool CheckPIN()
+        {
+            if (_pinOriginal != PinUser)
+            {
+                Console.WriteLine("Incorrect PIN!");
+                return false;
+            }
+            Console.WriteLine("Correct PIN");
+            return true;
+        }
+        
         public void Deposit(decimal amount)
         {
+            CheckActivity();
+            CheckPIN();
             if(amount <= 0)
                 throw new Exception("The Amount Must be Positive!");
             var DepositTransaction = new Transaction(+amount, DateTime.Now, "Deposit");
@@ -118,6 +130,8 @@ class BankAccount
 
         public void Withdraw(decimal amount)
         {
+            CheckActivity();
+            CheckPIN();
             if(amount <= 0)
                 throw new Exception("The Amount Must be Positive!");
             if(amount > Balance)
@@ -145,14 +159,14 @@ class BankAccount
 
         public IReadOnlyList<Transaction> TransactionHistory()
         {
+            CheckActivity();
+            CheckPIN();
             return _transactionhistory.AsReadOnly();
         }
     }
 
-// Transaction Class
 class Transaction 
 {
-    // Fields of our Transaction CLass
     public decimal Amount { get; }
     public DateTime Date { get; }
     public string Type { get; }
@@ -166,7 +180,6 @@ class Transaction
     }
     public override string ToString()
     {
-        // Using the Concept of Polymorphism to Edit the ToString() Method
         return $"[{Date.ToString("yyyy-MM-dd")}] {Type}: ${Amount}";
     }
 }
